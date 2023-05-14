@@ -15,16 +15,19 @@ grass.src = './resources/img/grass.png';
 
 //audio
 let shoot = new Audio();
-shoot.src = "./resources/audio/shoot1.wav"
+shoot.src = "./resources/audio/shoot2.wav"
 
 let enemydie = new Audio();
-enemydie.src = "./resources/audio/enemydie.wav"
+enemydie.src = "./resources/audio/enemydie1.wav"
 
 let moreseconds = new Audio();
 moreseconds.src = "./resources/audio/moreseconds.wav"
 
 let buystats = new Audio();
 buystats.src = "./resources/audio/buystats.wav"
+
+let pagechange = new Audio();
+pagechange.src = "./resources/audio/pagechange.wav"
 
 shoots = [];
 enemies = [];
@@ -183,7 +186,7 @@ const player = new Player({
         x: WIDTH / 2,
         y: HEIGHT
     }
-}, spritesheet, 94, 10, 64, 64, 10, 6, 0);
+}, spritesheet, 64, 1, 64, 64, 10, 6, 0);
 
 const enemyexample = new Enemy({
     position: {
@@ -203,7 +206,7 @@ function spawnEnemy() {
                 x: posx,
                 y: posy
             }
-        }, enemyid, spritesheet, 324, 10, 44, 64, enemydie, enemyLife, enemyReward));
+        }, enemyid, spritesheet, 232, 1, 50, 64, enemydie, enemyLife, enemyReward));
         enemyid++;
     }
 }
@@ -263,7 +266,7 @@ function animate() {
             spawnMoreEnemies = false;
             round++;
             if (round % 5 == 0) {
-                enemiesNumAdd += 3;
+                enemiesNumAdd += 2;
             }
             if (round % 10 == 0) {
                 moreSeconds = true;
@@ -318,7 +321,7 @@ function animate() {
     if (upgrade) {
         c.fillStyle = "black";
         c.font = "50px font";
-        c.fillText("Stats Upgrade.", WIDTH / 4, HEIGHT - 500);
+        c.fillText("Stats Upgrade.", WIDTH / 4, HEIGHT - 525);
 
         if (player.coins >= powerCost) {
             c.fillStyle = "black";
@@ -326,7 +329,7 @@ function animate() {
             c.fillStyle = "red";
         }
         c.font = "30px font";
-        c.fillText("1 - Power " + (powerLvl < 20 ? "$" + Math.floor(powerCost) : "") + " | LVL. " + (powerLvl < 20 ? powerLvl : "MAX") + " |", WIDTH / 3.6, HEIGHT - 380);
+        c.fillText("1 - Power " + (powerLvl < 20 ? "$" + Math.floor(powerCost) : "") + " | LVL. " + (powerLvl < 20 ? powerLvl : "MAX") + " |", WIDTH / 3.6, HEIGHT - 405);
 
         if (player.coins >= speedCost) {
             c.fillStyle = "black";
@@ -334,7 +337,7 @@ function animate() {
             c.fillStyle = "red";
         }
         c.font = "30px font";
-        c.fillText("2 - Speed " + (speedLvl < 10 ? "$" + Math.floor(speedCost) : "") + " | LVL. " + (speedLvl < 10 ? speedLvl : "MAX") + " |", WIDTH / 3.6, HEIGHT - 310);
+        c.fillText("2 - Speed " + (speedLvl < 10 ? "$" + Math.floor(speedCost) : "") + " | LVL. " + (speedLvl < 10 ? speedLvl : "MAX") + " |", WIDTH / 3.6, HEIGHT - 335);
 
         if (player.coins >= secondsCost) {
             c.fillStyle = "black";
@@ -342,11 +345,11 @@ function animate() {
             c.fillStyle = "red";
         }
         c.font = "30px font";
-        c.fillText("3 - +15 Seconds " + (secondsLevel < 1 ? "$" + Math.floor(secondsCost) : "") + " | LVL. " + (secondsLevel < 1 ? secondsLevel : "MAX") + " |", WIDTH / 4.7, HEIGHT - 240);
+        c.fillText("3 - +15 Seconds " + (secondsLevel < 1 ? "$" + Math.floor(secondsCost) : "") + " | LVL. " + (secondsLevel < 1 ? secondsLevel : "MAX") + " |", WIDTH / 4.7, HEIGHT - 265);
 
         c.fillStyle = "black";
         c.font = "30px font";
-        c.fillText("Press 'J' to start | 'Esc' to menu.", WIDTH / 5.7, HEIGHT - 100);
+        c.fillText("Press 'J' to start | 'Esc' to menu.", WIDTH / 5.7, HEIGHT - 125);
     }
 
     if (gameOver) {

@@ -3,6 +3,9 @@ addEventListener("keydown", (e) => {
         switch (e.key) {
             case 'k':
                 if (!start) {
+                    pagechange.pause();
+                    pagechange.currentTime = 0;
+                    pagechange.play();
                     upgrade = true;
                 }
                 break;
@@ -28,13 +31,13 @@ addEventListener("keydown", (e) => {
                 break;
             case 'a':
                 player.velocity.x = -player.speed;
-                player.spritex = 178;
+                player.spritex = 128;
                 playerRight = false;
                 playerLeft = true;
                 break;
             case 'd':
                 player.velocity.x = +player.speed;
-                player.spritex = 94;
+                player.spritex = 64;
                 playerRight = true;
                 playerLeft = false;
                 break;
@@ -42,6 +45,9 @@ addEventListener("keydown", (e) => {
 
             case 'K':
                 if (!start) {
+                    pagechange.pause();
+                    pagechange.currentTime = 0;
+                    pagechange.play();
                     upgrade = true;
                 }
                 break;
@@ -66,12 +72,12 @@ addEventListener("keydown", (e) => {
                 player.velocity.y = +player.speed;
                 break;
             case 'A':
-                player.spritex = 178;
+                player.spritex = 128;
                 playerLeft = true;
                 player.velocity.x = -player.speed;
                 break;
             case 'D':
-                player.spritex = 94;
+                player.spritex = 64;
                 playerLeft = false;
                 player.velocity.x = +player.speed;
                 break;
@@ -83,14 +89,14 @@ addEventListener("keydown", (e) => {
                                 x: player.position.x - player.width + 30,
                                 y: player.position.y - (player.width / 2)
                             }
-                        }, spritesheet, 262, 10, 32, 32, shoot));
+                        }, spritesheet, 192, 1, 32, 32, shoot));
                     } else {
                         shoots.push(new Shoot({
                             position: {
                                 x: player.position.x,
                                 y: player.position.y - (player.width / 2)
                             }
-                        }, spritesheet, 262, 10, 32, 32, shoot));
+                        }, spritesheet, 192, 1, 32, 32, shoot));
                     }
                     canShoot = true;
                 }
@@ -145,7 +151,12 @@ addEventListener("keydown", (e) => {
                 break;
 
             case 'Escape':
-                upgrade = false;
+                if(upgrade){
+                    pagechange.pause();
+                    pagechange.currentTime = 0;
+                    pagechange.play();
+                    upgrade = false;
+                }
                 break;
 
         }

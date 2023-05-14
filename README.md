@@ -18,3 +18,8 @@ DevUpdate 0.5 09/05:
 - Adding new "Basilisk" enemy sprite;
 - Adding "More Seconds" stats, a one time purchase that give 15 more initial seconds;
 - Adding a "Game Over" screen when time is over;
+
+DevUpdate 0.6 09/05:
+- Adding shadowin sprites;
+- Changing sound effects;
+
