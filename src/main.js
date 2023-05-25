@@ -364,11 +364,10 @@ function animate() {
     }
 
     if (!start && !upgrade) {
-        c.drawImage(bonfire, 100, 145, 200, 180);
 
         c.fillStyle = "black";
         c.font = "50px font";
-        c.fillText("Gatito Souls", WIDTH / 2.8, HEIGHT / 2.6);
+        c.fillText("Gatito Souls", WIDTH / 3.2, HEIGHT / 2.6);
 
 
         c.fillStyle = "black";
