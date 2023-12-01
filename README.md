@@ -1,3 +1,4 @@
 # Be a cat. With a gun. Shoot milk boxes. Kill Dark Souls enemies.
 
->  [Enjoy the game](https://yxpfr.itch.io/gatitosouls)
+>  [Pages](https://brunopstephan.github.io/gatitosouls/)
+>  [Itch.io](https://yxpfr.itch.io/gatitosouls)
